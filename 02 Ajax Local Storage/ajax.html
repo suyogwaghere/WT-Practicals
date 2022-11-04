@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+    <!-- <script src="login.js"></script> -->
+    <input type="username" id="myText" value="">
+    <input type="password" id="myText1" value="">
+    <button id="button">login</button>
+    <script>
+     var userArray = [
+         {
+             username: "user1",
+             password: "pw1"
+         },
+         {
+             username: "user2",
+             password: "pw2"
+         },
+         {
+             username: "user3",
+             password: "pw3"
+         }
+     ]   
+
+
+function loginFunction () {
+        let username = document.getElementById("myText").value;
+        let password = document.getElementById("myText1").value;
+  let currentUser = userArray.filter( user=> user.username == username && user.password == password)
+  currentUser.length ? console.log('Hello'): console.log('Wrong data')
+}
+
+const button = document.getElementById("button");
+button.addEventListener('click', () => {
+    loginFunction();
+});
+</script>
+</body>
+</html>
